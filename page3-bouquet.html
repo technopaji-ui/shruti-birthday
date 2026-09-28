@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You, Shrutu 💐</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plum:#2e1a2b; --wine:#6b2d43; --blush:#f0d3d3; --rose:#d98d96; --gold:#e3b873; --cream:#faf1e8;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{
+    min-height:100%;
+    background:
+      radial-gradient(ellipse 60% 50% at 15% 0%, rgba(227,184,115,0.14), transparent 60%),
+      radial-gradient(ellipse 70% 60% at 85% 100%, rgba(107,45,67,0.45), transparent 60%),
+      linear-gradient(160deg, #2e1a2b 0%, #201320 100%);
+    font-family:'Jost', sans-serif;
+    color:var(--cream);
+  }
+  .heart-field{ position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+  .heart-field svg.h{ position:absolute; opacity:0.07; animation:drift linear infinite; }
+  @keyframes drift{ 0%{ transform:translateY(6vh) rotate(0deg); } 100%{ transform:translateY(-106vh) rotate(12deg); } }
+
+  .stage{ position:relative; z-index:2; min-height:100vh; width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:30px 22px; text-align:center; }
+
+  .bouquet{ width:min(85vw, 340px); height:auto; overflow:visible; margin-bottom:10px; }
+
+  .stem{ stroke:#8fae7a; stroke-width:3; fill:none; stroke-dasharray:220; stroke-dashoffset:220; animation:growStem 1s ease forwards; }
+  .leaf{ transform-origin:center; transform:scale(0); opacity:0; animation:pop 0.5s ease forwards; }
+  .petal{ transform-box:fill-box; transform-origin:center; transform:scale(0); opacity:0; animation:pop 0.55s cubic-bezier(.34,1.56,.64,1) forwards; }
+  .center{ transform-box:fill-box; transform-origin:center; transform:scale(0); opacity:0; animation:pop 0.4s ease forwards; }
+  .ribbon{ transform-box:fill-box; transform-origin:center; transform:scale(0); opacity:0; animation:pop 0.6s ease forwards; }
+
+  @keyframes growStem{ to{ stroke-dashoffset:0; } }
+  @keyframes pop{ to{ transform:scale(1); opacity:1; } }
+
+  .eyebrow{ font-size:11px; letter-spacing:0.35em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; opacity:0.85; }
+  h1{ font-family:'Cormorant Garamond', serif; font-weight:600; font-size:clamp(28px, 7vw, 40px); line-height:1.2; margin-bottom:18px; }
+  h1 em{ font-style:italic; color:var(--rose); }
+  p.confession{
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px; color:var(--blush);
+    max-width:380px; line-height:1.7; opacity:0; animation:fadeIn 1s ease forwards; animation-delay:2.4s;
+  }
+  @keyframes fadeIn{ from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);} }
+</style>
+</head>
+<body>
+
+<div class="heart-field" id="heartField"></div>
+
+<div class="stage">
+  <div class="eyebrow">a little something, just for you</div>
+  <svg class="bouquet" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  
+    <g>
+      <path class="stem f0" d="M150,260 Q160.0,160.0 150,60" style="animation-delay:0.0s"/>
+      <ellipse class="leaf f0" cx="136.0" cy="175.0" rx="10" ry="4" fill="#7fa876" transform="rotate(-30 136.0 175.0)" style="animation-delay:0.4s"/>
+      <ellipse class="petal outer f0" cx="161.0" cy="60.0" rx="9" ry="6.5" fill="#e79bb0" transform="rotate(90.0 161.0 60.0)" style="animation-delay:0.9s"/><ellipse class="petal outer f0" cx="155.5" cy="69.5" rx="9" ry="6.5" fill="#e79bb0" transform="rotate(150.0 155.5 69.5)" style="animation-delay:0.9s"/><ellipse class="petal outer f0" cx="144.5" cy="69.5" rx="9" ry="6.5" fill="#e79bb0" transform="rotate(210.0 144.5 69.5)" style="animation-delay:0.9s"/><ellipse class="petal outer f0" cx="139.0" cy="60.0" rx="9" ry="6.5" fill="#e79bb0" transform="rotate(270.0 139.0 60.0)" style="animation-delay:0.9s"/><ellipse class="petal outer f0" cx="144.5" cy="50.5" rx="9" ry="6.5" fill="#e79bb0" transform="rotate(330.0 144.5 50.5)" style="animation-delay:0.9s"/><ellipse class="petal outer f0" cx="155.5" cy="50.5" rx="9" ry="6.5" fill="#e79bb0" transform="rotate(390.0 155.5 50.5)" style="animation-delay:0.9s"/><ellipse class="petal inner f0" cx="156.0" cy="60.0" rx="6" ry="4.5" fill="#e79bb0" opacity="0.85" transform="rotate(90.0 156.0 60.0)" style="animation-delay:1.05s"/><ellipse class="petal inner f0" cx="153.0" cy="65.2" rx="6" ry="4.5" fill="#e79bb0" opacity="0.85" transform="rotate(150.0 153.0 65.2)" style="animation-delay:1.05s"/><ellipse class="petal inner f0" cx="147.0" cy="65.2" rx="6" ry="4.5" fill="#e79bb0" opacity="0.85" transform="rotate(210.0 147.0 65.2)" style="animation-delay:1.05s"/><ellipse class="petal inner f0" cx="144.0" cy="60.0" rx="6" ry="4.5" fill="#e79bb0" opacity="0.85" transform="rotate(270.0 144.0 60.0)" style="animation-delay:1.05s"/><ellipse class="petal inner f0" cx="147.0" cy="54.8" rx="6" ry="4.5" fill="#e79bb0" opacity="0.85" transform="rotate(330.0 147.0 54.8)" style="animation-delay:1.05s"/><ellipse class="petal inner f0" cx="153.0" cy="54.8" rx="6" ry="4.5" fill="#e79bb0" opacity="0.85" transform="rotate(390.0 153.0 54.8)" style="animation-delay:1.05s"/>
+      <circle class="center f0" cx="150" cy="60" r="5.5" fill="#fff3d6" style="animation-delay:1.3s"/>
+    </g>
+    <g>
+      <path class="stem f1" d="M140,260 Q107.5,175.0 95,90" style="animation-delay:0.3s"/>
+      <ellipse class="leaf f1" cx="103.5" cy="190.0" rx="10" ry="4" fill="#7fa876" transform="rotate(-30 103.5 190.0)" style="animation-delay:0.7s"/>
+      <ellipse class="petal outer f1" cx="106.0" cy="90.0" rx="9" ry="6.5" fill="#f0c789" transform="rotate(90.0 106.0 90.0)" style="animation-delay:1.2s"/><ellipse class="petal outer f1" cx="100.5" cy="99.5" rx="9" ry="6.5" fill="#f0c789" transform="rotate(150.0 100.5 99.5)" style="animation-delay:1.2s"/><ellipse class="petal outer f1" cx="89.5" cy="99.5" rx="9" ry="6.5" fill="#f0c789" transform="rotate(210.0 89.5 99.5)" style="animation-delay:1.2s"/><ellipse class="petal outer f1" cx="84.0" cy="90.0" rx="9" ry="6.5" fill="#f0c789" transform="rotate(270.0 84.0 90.0)" style="animation-delay:1.2s"/><ellipse class="petal outer f1" cx="89.5" cy="80.5" rx="9" ry="6.5" fill="#f0c789" transform="rotate(330.0 89.5 80.5)" style="animation-delay:1.2s"/><ellipse class="petal outer f1" cx="100.5" cy="80.5" rx="9" ry="6.5" fill="#f0c789" transform="rotate(390.0 100.5 80.5)" style="animation-delay:1.2s"/><ellipse class="petal inner f1" cx="101.0" cy="90.0" rx="6" ry="4.5" fill="#f0c789" opacity="0.85" transform="rotate(90.0 101.0 90.0)" style="animation-delay:1.3499999999999999s"/><ellipse class="petal inner f1" cx="98.0" cy="95.2" rx="6" ry="4.5" fill="#f0c789" opacity="0.85" transform="rotate(150.0 98.0 95.2)" style="animation-delay:1.3499999999999999s"/><ellipse class="petal inner f1" cx="92.0" cy="95.2" rx="6" ry="4.5" fill="#f0c789" opacity="0.85" transform="rotate(210.0 92.0 95.2)" style="animation-delay:1.3499999999999999s"/><ellipse class="petal inner f1" cx="89.0" cy="90.0" rx="6" ry="4.5" fill="#f0c789" opacity="0.85" transform="rotate(270.0 89.0 90.0)" style="animation-delay:1.3499999999999999s"/><ellipse class="petal inner f1" cx="92.0" cy="84.8" rx="6" ry="4.5" fill="#f0c789" opacity="0.85" transform="rotate(330.0 92.0 84.8)" style="animation-delay:1.3499999999999999s"/><ellipse class="petal inner f1" cx="98.0" cy="84.8" rx="6" ry="4.5" fill="#f0c789" opacity="0.85" transform="rotate(390.0 98.0 84.8)" style="animation-delay:1.3499999999999999s"/>
+      <circle class="center f1" cx="95" cy="90" r="5.5" fill="#fff3d6" style="animation-delay:1.6s"/>
+    </g>
+    <g>
+      <path class="stem f2" d="M160,260 Q192.5,175.0 205,90" style="animation-delay:0.6s"/>
+      <ellipse class="leaf f2" cx="168.5" cy="190.0" rx="10" ry="4" fill="#7fa876" transform="rotate(-30 168.5 190.0)" style="animation-delay:1.0s"/>
+      <ellipse class="petal outer f2" cx="216.0" cy="90.0" rx="9" ry="6.5" fill="#d98d96" transform="rotate(90.0 216.0 90.0)" style="animation-delay:1.5s"/><ellipse class="petal outer f2" cx="210.5" cy="99.5" rx="9" ry="6.5" fill="#d98d96" transform="rotate(150.0 210.5 99.5)" style="animation-delay:1.5s"/><ellipse class="petal outer f2" cx="199.5" cy="99.5" rx="9" ry="6.5" fill="#d98d96" transform="rotate(210.0 199.5 99.5)" style="animation-delay:1.5s"/><ellipse class="petal outer f2" cx="194.0" cy="90.0" rx="9" ry="6.5" fill="#d98d96" transform="rotate(270.0 194.0 90.0)" style="animation-delay:1.5s"/><ellipse class="petal outer f2" cx="199.5" cy="80.5" rx="9" ry="6.5" fill="#d98d96" transform="rotate(330.0 199.5 80.5)" style="animation-delay:1.5s"/><ellipse class="petal outer f2" cx="210.5" cy="80.5" rx="9" ry="6.5" fill="#d98d96" transform="rotate(390.0 210.5 80.5)" style="animation-delay:1.5s"/><ellipse class="petal inner f2" cx="211.0" cy="90.0" rx="6" ry="4.5" fill="#d98d96" opacity="0.85" transform="rotate(90.0 211.0 90.0)" style="animation-delay:1.65s"/><ellipse class="petal inner f2" cx="208.0" cy="95.2" rx="6" ry="4.5" fill="#d98d96" opacity="0.85" transform="rotate(150.0 208.0 95.2)" style="animation-delay:1.65s"/><ellipse class="petal inner f2" cx="202.0" cy="95.2" rx="6" ry="4.5" fill="#d98d96" opacity="0.85" transform="rotate(210.0 202.0 95.2)" style="animation-delay:1.65s"/><ellipse class="petal inner f2" cx="199.0" cy="90.0" rx="6" ry="4.5" fill="#d98d96" opacity="0.85" transform="rotate(270.0 199.0 90.0)" style="animation-delay:1.65s"/><ellipse class="petal inner f2" cx="202.0" cy="84.8" rx="6" ry="4.5" fill="#d98d96" opacity="0.85" transform="rotate(330.0 202.0 84.8)" style="animation-delay:1.65s"/><ellipse class="petal inner f2" cx="208.0" cy="84.8" rx="6" ry="4.5" fill="#d98d96" opacity="0.85" transform="rotate(390.0 208.0 84.8)" style="animation-delay:1.65s"/>
+      <circle class="center f2" cx="205" cy="90" r="5.5" fill="#fff3d6" style="animation-delay:1.9s"/>
+    </g>
+    <g>
+      <path class="stem f3" d="M130,260 Q85.0,200.0 60,140" style="animation-delay:0.9s"/>
+      <ellipse class="leaf f3" cx="81.0" cy="215.0" rx="10" ry="4" fill="#7fa876" transform="rotate(-30 81.0 215.0)" style="animation-delay:1.3s"/>
+      <ellipse class="petal outer f3" cx="71.0" cy="140.0" rx="9" ry="6.5" fill="#f3a9b8" transform="rotate(90.0 71.0 140.0)" style="animation-delay:1.8s"/><ellipse class="petal outer f3" cx="65.5" cy="149.5" rx="9" ry="6.5" fill="#f3a9b8" transform="rotate(150.0 65.5 149.5)" style="animation-delay:1.8s"/><ellipse class="petal outer f3" cx="54.5" cy="149.5" rx="9" ry="6.5" fill="#f3a9b8" transform="rotate(210.0 54.5 149.5)" style="animation-delay:1.8s"/><ellipse class="petal outer f3" cx="49.0" cy="140.0" rx="9" ry="6.5" fill="#f3a9b8" transform="rotate(270.0 49.0 140.0)" style="animation-delay:1.8s"/><ellipse class="petal outer f3" cx="54.5" cy="130.5" rx="9" ry="6.5" fill="#f3a9b8" transform="rotate(330.0 54.5 130.5)" style="animation-delay:1.8s"/><ellipse class="petal outer f3" cx="65.5" cy="130.5" rx="9" ry="6.5" fill="#f3a9b8" transform="rotate(390.0 65.5 130.5)" style="animation-delay:1.8s"/><ellipse class="petal inner f3" cx="66.0" cy="140.0" rx="6" ry="4.5" fill="#f3a9b8" opacity="0.85" transform="rotate(90.0 66.0 140.0)" style="animation-delay:1.95s"/><ellipse class="petal inner f3" cx="63.0" cy="145.2" rx="6" ry="4.5" fill="#f3a9b8" opacity="0.85" transform="rotate(150.0 63.0 145.2)" style="animation-delay:1.95s"/><ellipse class="petal inner f3" cx="57.0" cy="145.2" rx="6" ry="4.5" fill="#f3a9b8" opacity="0.85" transform="rotate(210.0 57.0 145.2)" style="animation-delay:1.95s"/><ellipse class="petal inner f3" cx="54.0" cy="140.0" rx="6" ry="4.5" fill="#f3a9b8" opacity="0.85" transform="rotate(270.0 54.0 140.0)" style="animation-delay:1.95s"/><ellipse class="petal inner f3" cx="57.0" cy="134.8" rx="6" ry="4.5" fill="#f3a9b8" opacity="0.85" transform="rotate(330.0 57.0 134.8)" style="animation-delay:1.95s"/><ellipse class="petal inner f3" cx="63.0" cy="134.8" rx="6" ry="4.5" fill="#f3a9b8" opacity="0.85" transform="rotate(390.0 63.0 134.8)" style="animation-delay:1.95s"/>
+      <circle class="center f3" cx="60" cy="140" r="5.5" fill="#fff3d6" style="animation-delay:2.2s"/>
+    </g>
+    <g>
+      <path class="stem f4" d="M170,260 Q215.0,200.0 240,140" style="animation-delay:1.2s"/>
+      <ellipse class="leaf f4" cx="191.0" cy="215.0" rx="10" ry="4" fill="#7fa876" transform="rotate(-30 191.0 215.0)" style="animation-delay:1.6s"/>
+      <ellipse class="petal outer f4" cx="251.0" cy="140.0" rx="9" ry="6.5" fill="#e8b4d8" transform="rotate(90.0 251.0 140.0)" style="animation-delay:2.1s"/><ellipse class="petal outer f4" cx="245.5" cy="149.5" rx="9" ry="6.5" fill="#e8b4d8" transform="rotate(150.0 245.5 149.5)" style="animation-delay:2.1s"/><ellipse class="petal outer f4" cx="234.5" cy="149.5" rx="9" ry="6.5" fill="#e8b4d8" transform="rotate(210.0 234.5 149.5)" style="animation-delay:2.1s"/><ellipse class="petal outer f4" cx="229.0" cy="140.0" rx="9" ry="6.5" fill="#e8b4d8" transform="rotate(270.0 229.0 140.0)" style="animation-delay:2.1s"/><ellipse class="petal outer f4" cx="234.5" cy="130.5" rx="9" ry="6.5" fill="#e8b4d8" transform="rotate(330.0 234.5 130.5)" style="animation-delay:2.1s"/><ellipse class="petal outer f4" cx="245.5" cy="130.5" rx="9" ry="6.5" fill="#e8b4d8" transform="rotate(390.0 245.5 130.5)" style="animation-delay:2.1s"/><ellipse class="petal inner f4" cx="246.0" cy="140.0" rx="6" ry="4.5" fill="#e8b4d8" opacity="0.85" transform="rotate(90.0 246.0 140.0)" style="animation-delay:2.25s"/><ellipse class="petal inner f4" cx="243.0" cy="145.2" rx="6" ry="4.5" fill="#e8b4d8" opacity="0.85" transform="rotate(150.0 243.0 145.2)" style="animation-delay:2.25s"/><ellipse class="petal inner f4" cx="237.0" cy="145.2" rx="6" ry="4.5" fill="#e8b4d8" opacity="0.85" transform="rotate(210.0 237.0 145.2)" style="animation-delay:2.25s"/><ellipse class="petal inner f4" cx="234.0" cy="140.0" rx="6" ry="4.5" fill="#e8b4d8" opacity="0.85" transform="rotate(270.0 234.0 140.0)" style="animation-delay:2.25s"/><ellipse class="petal inner f4" cx="237.0" cy="134.8" rx="6" ry="4.5" fill="#e8b4d8" opacity="0.85" transform="rotate(330.0 237.0 134.8)" style="animation-delay:2.25s"/><ellipse class="petal inner f4" cx="243.0" cy="134.8" rx="6" ry="4.5" fill="#e8b4d8" opacity="0.85" transform="rotate(390.0 243.0 134.8)" style="animation-delay:2.25s"/>
+      <circle class="center f4" cx="240" cy="140" r="5.5" fill="#fff3d6" style="animation-delay:2.5s"/>
+    </g>
+  <path class="ribbon" d="M120,255 Q150,275 180,255 L170,290 Q150,278 130,290 Z" fill="#c9576b" style="animation-delay:2.0s"/>
+</svg>
+  <h1>For you, <em>Shrutu</em></h1>
+  <p class="confession">
+    Every flower here is my own small way of saying what I feel every single day —
+    that I love you more than distance, time, or any of it can measure.
+    You are my favorite person, my favorite thought, my always.
+    Happy Birthday, my love. Here's to us, and to everything still coming. 💐💗
+  </p>
+</div>
+
+<script>
+  const heartsContainer = document.getElementById('heartField');
+  const HEART_PATH = "M12 21s-6.7-4.2-9.3-8.1C.6 9.9 1.6 6.4 4.6 5.1 6.7 4.2 9 5 10.3 6.8 11 7.7 12 9 12 9s1-1.3 1.7-2.2C15 5 17.3 4.2 19.4 5.1c3 1.3 4 4.8 1.9 7.8C18.7 16.8 12 21 12 21z";
+  for(let i=0;i<20;i++){
+    const size = 14 + Math.random()*28;
+    const svgNS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(svgNS, "svg");
+    svg.setAttribute("class","h");
+    svg.setAttribute("width", size); svg.setAttribute("height", size); svg.setAttribute("viewBox", "0 0 24 24");
+    svg.style.left = (Math.random()*100) + "vw";
+    svg.style.bottom = "-40px";
+    svg.style.animationDuration = (22 + Math.random()*26) + "s";
+    svg.style.animationDelay = (-Math.random()*40) + "s";
+    const path = document.createElementNS(svgNS, "path");
+    path.setAttribute("d", HEART_PATH);
+    path.setAttribute("fill", Math.random() > 0.5 ? "#e3b873" : "#d98d96");
+    svg.appendChild(path);
+    heartsContainer.appendChild(svg);
+  }
+</script>
+
+</body>
+</html>
